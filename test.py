@@ -10,6 +10,8 @@ from sklearn import linear_model
 from sklearn.metrics import accuracy_score
 import csv
 
+
+print('1234567890')
 # songs preprocess
 '''
 print('run')
@@ -201,7 +203,7 @@ test = pd.read_csv(
 print(test.isnull().sum())
 '''
 
-
+'''
 # train = pd.read_csv(
 #   '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/testtrain.csv')
 
@@ -283,3 +285,4 @@ zero = pd.DataFrame(zero, columns=train.columns)
 
 zero.to_csv(
     './zero.csv', index=False)
+'''
