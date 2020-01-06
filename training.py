@@ -70,6 +70,8 @@ print('test before scale', test.isnull().sum().sum())
 
 # process train
 print('concat')
+print(train.shape)
+print(ans.shape)
 train = pd.concat([train, ans], axis=1)
 print('dropna')
 train.dropna(inplace=True)
