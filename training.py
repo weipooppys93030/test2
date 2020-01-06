@@ -62,32 +62,7 @@ print('join members', total.isnull().sum().sum())
 
 print('already merge songs,members')
 
-train = total[:pretrain.shape[0]]
-print('train before scale', train.isnull().sum().sum())
-test = total[pretrain.shape[0]:]
-print('test before scale', test.isnull().sum().sum())
-
-
-# process train
-print('concat')
-print(train.shape)
-print(ans.shape)
-train = pd.concat([train, ans], axis=1)
-print('dropna')
-train.dropna(inplace=True)
-print('pop')
-ans = train.pop('target')
-
-
-# process test
-print('fillna')
-test.fillna(value=0, inplace=True)
-
-print('append')
-total = train.append(test)
-print('before to csv')
-total.to_csv('./total.csv', index=False)
-print('total to csv')
+total.fillna(value=0, inplace=True)
 # scalization
 scaler = MinMaxScaler()
 print('scale')
