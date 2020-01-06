@@ -13,9 +13,10 @@ import csv
 
 df = pd.read_csv(
     './merge.csv')
-print('one')
-one = df[df.target == 1]
-one.to_csv('./one.csv', index=False)
-print('zero')
-zero = df[df.target == 0]
-zero.to_csv('./zero.csv', index=False)
+
+one = pd.read_csv(
+    './one.csv')
+
+zero = pd.read_csv(
+    './zero.csv')
+
