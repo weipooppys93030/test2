@@ -20,11 +20,7 @@ one = pd.read_csv(
 zero = pd.read_csv(
     './zero.csv')
 
-print('init', df['registration_init_time'].sum(),
-      one['registration_init_time'].sum(), zero['registration_init_time'].sum())
-
-print('expiration_date', df['expiration_date'].sum(),
-      one['expiration_date'].sum(), zero['expiration_date'].sum())
-
-print('remaining_time', df['remaining_time'].sum(),
-      one['remaining_time'].sum(), zero['remaining_time'].sum())
+print('male', df[df.gander == 'male'].shape[0],
+      one[one.gender == 'male'].shape[0], zero[zero.gender == 'male'].shape[0])
+print('female', df[df.gander == 'female'].shape[0],
+      one[one.gender == 'female'].shape[0], zero[zero.gender == 'female'].shape[0])
