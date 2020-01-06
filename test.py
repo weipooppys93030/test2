@@ -208,7 +208,7 @@ print(test.isnull().sum())
 train = pd.read_csv(
     './train.csv')
 
-train.pop('source_system_tab')
+# train.pop('source_system_tab')
 train.pop('source_screen_name')
 # train.pop('source_type')
 
@@ -249,7 +249,7 @@ train = train.join(songs)
 train.set_index('msno', inplace=True)
 train = train.join(members)
 
-train = train.dropna()
+train.fillna(value=0, inplace=True)
 
 # train.to_csv(
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/merge.csv', index=False)
@@ -257,26 +257,16 @@ train = train.dropna()
 train.to_csv(
     './merge.csv', index=False)
 
-print('dropna')
-zero = []
-one = []
-for index, row in train.iterrows():
-    if row['target'] == 1:
-        one.append(row)
-    else:
-        zero.append(row)
+print('fillna')
 
-
-one = pd.DataFrame(one, columns=train.columns)
-
-
+one = train[train.target == 1]
+zero = train[train.target == 0]
 # one.to_csv(
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/one.csv', index=False)
 
 one.to_csv(
     './one.csv', index=False)
 
-zero = pd.DataFrame(zero, columns=train.columns)
 
 # zero.to_csv(
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/zero.csv', index=False)
