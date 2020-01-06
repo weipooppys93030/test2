@@ -202,6 +202,9 @@ print(test.isnull().sum())
 '''
 
 
+# train = pd.read_csv(
+#   '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/testtrain.csv')
+
 train = pd.read_csv(
     './train.csv')
 
@@ -209,6 +212,9 @@ train.pop('source_system_tab')
 train.pop('source_screen_name')
 train.pop('source_type')
 
+
+# songs = pd.read_csv(
+#    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/songs.csv')
 
 songs = pd.read_csv(
     './songs.csv')
@@ -218,10 +224,15 @@ songs.pop('artist_name')
 songs.pop('composer')
 songs.pop('lyricist')
 
+# members = pd.read_csv(
+#    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/members.csv')
+
 members = pd.read_csv(
     './members.csv')
 
+
 members.pop('gender')
+
 expiration = members.pop('expiration_date')
 last = expiration - members['registration_init_time']
 expiration = pd.concat([expiration, last], axis=1)
@@ -240,13 +251,35 @@ train = train.join(members)
 
 train = train.dropna()
 
+# train.to_csv(
+#    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/merge.csv', index=False)
+
+train.to_csv(
+    './merge.csv', index=False)
+
+print('dropna')
 zero = []
+one = []
 for index, row in train.iterrows():
     if row['target'] == 1:
-        zero.append(train.pop(row))
+        one.append(row)
+    else:
+        zero.append(row)
 
-train.to_csv('./one.csv', index=False)
+
+one = pd.DataFrame(one, columns=train.columns)
+
+
+# one.to_csv(
+#    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/one.csv', index=False)
+
+one.to_csv(
+    './one.csv', index=False)
 
 zero = pd.DataFrame(zero, columns=train.columns)
 
-zero.to_csv('./zero.csv', index=False)
+# zero.to_csv(
+#    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/zero.csv', index=False)
+
+zero.to_csv(
+    './zero.csv', index=False)
