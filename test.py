@@ -20,7 +20,7 @@ one = pd.read_csv(
 zero = pd.read_csv(
     './zero.csv')
 
-print('male', df[df.gander == 'male'].shape[0],
+print('male', df[df.gender == 'male'].shape[0],
       one[one.gender == 'male'].shape[0], zero[zero.gender == 'male'].shape[0])
-print('female', df[df.gander == 'female'].shape[0],
+print('female', df[df.gender == 'female'].shape[0],
       one[one.gender == 'female'].shape[0], zero[zero.gender == 'female'].shape[0])
