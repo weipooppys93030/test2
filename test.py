@@ -29,8 +29,8 @@ print('english', df[df.language == 52].shape[0],
 print('korean', df[df.language == 31].shape[0],
       one[one.language == 31].shape[0], zero[zero.language == 31].shape[0])
 
-print('japanese', df[df.langage == 17].shape[0],
+print('japanese', df[df.language == 17].shape[0],
       one[one.language == 17].shape[0], zero[zero.language == 17].shape[0])
 
-print('taiwanese', df[df.langage == 10].shape[0],
+print('taiwanese', df[df.language == 10].shape[0],
       one[one.language == 10].shape[0], zero[zero.language == 10].shape[0])
