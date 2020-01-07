@@ -15,3 +15,7 @@ train = pd.read_csv(
     './merge2.csv')
 
 print(train.shape)
+
+ans = train.pop('target')
+train.join(ans)
+print(train.shape)
