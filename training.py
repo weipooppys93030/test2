@@ -77,9 +77,9 @@ test = total[pretrain.shape[0]:]
 
 
 # can modify variable
-clf = linear_model.SGDClassifier(n_jobs=-1, verbose=1)
+#clf = linear_model.SGDClassifier(n_jobs=-1, verbose=1)
 
-#clf = XGBClassifier(n_jobs=-1)
+clf = XGBClassifier(n_jobs=-1, verbose_eval=True)
 
 print('start to train')
 clf.fit(train, ans.astype('int'))
