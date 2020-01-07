@@ -209,7 +209,7 @@ train = pd.read_csv(
     './train.csv')
 
 # train.pop('source_system_tab')
-train.pop('source_screen_name')
+# train.pop('source_screen_name')
 # train.pop('source_type')
 
 
@@ -219,7 +219,7 @@ train.pop('source_screen_name')
 songs = pd.read_csv(
     './songs.csv')
 
-songs.pop('genre_ids')
+# songs.pop('genre_ids')
 songs.pop('artist_name')
 songs.pop('composer')
 songs.pop('lyricist')
@@ -255,7 +255,7 @@ train.dropna()
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/merge.csv', index=False)
 
 train.to_csv(
-    './merge1.csv', index=False)
+    './merge.csv', index=False)
 
 print('dropna')
 
@@ -265,11 +265,11 @@ zero = train[train.target == 0]
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/one.csv', index=False)
 
 one.to_csv(
-    './one1.csv', index=False)
+    './one.csv', index=False)
 
 
 # zero.to_csv(
 #    '/Users/jimmy/Desktop/Python/project/kkbox-music-recommendation-challenge/zero.csv', index=False)
 
 zero.to_csv(
-    './zero1.csv', index=False)
+    './zero.csv', index=False)
