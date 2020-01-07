@@ -10,6 +10,8 @@ from sklearn import linear_model
 from sklearn.metrics import accuracy_score
 import csv
 
+
 train = pd.read_csv(
-    './merge1.csv')
+    './merge.csv')
+
 print(train.shape)
