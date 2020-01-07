@@ -17,5 +17,5 @@ train = pd.read_csv(
 print(train.shape)
 
 ans = train.pop('target')
-train.join(ans)
+train = train.join(ans)
 print(train.shape)
